@@ -1,0 +1,8 @@
+TAG,SNIPPET,DESCRIPTION
+git,git commit -a -m "initial commit",Commitiing in git
+git,git branch,Lists the git branches
+ls,ls -a,List all files even hidden ones
+git,git diff, shows differences
+cd,cd..,moves up one level
+git,git list,I don't know what this does....go
+cd,cd /,Go to root directory
