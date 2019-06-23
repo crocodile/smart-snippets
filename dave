@@ -1,4 +1,7 @@
 #!/bin/bash
+
+VERSION="1.1.0"
+
 LIGHT_GREEN='\033[1;32m'
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
@@ -85,9 +88,12 @@ then
 elif [ $command = "show" ] || [ $command = "s" ]
 then
 	open dave.csv
-elif [ $command = "help" ] || [ $command = "-help" ] || [ $command = "--help" ] ||[ $command = "-h" ] ||[ $command = "--h" ] 
+elif [ $command = "help" ] || [ $command = "--help" ] ||[ $command = "-h" ] 
 	then
 	echo -e " Use 'dave tell me <tag>' to look up snippets for a tag.\n Use 'dave remember <tag> <snippet> <description> to add a snippet.\n Use 'dave show' to open all snippets as a csv file."
+elif [ $command = "version" ] || [ $command = "--version" ] || [ $command = "-v" ]
+then
+	echo "Smart-snippets version: $VERSION"
 else
 	echo -e "${RED}I don't understand: $command${NC}\nRefer to 'dave --help' for options."
 fi
