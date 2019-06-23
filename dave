@@ -90,7 +90,7 @@ then
 	open dave.csv
 elif [ $command = "help" ] || [ $command = "--help" ] ||[ $command = "-h" ] 
 	then
-	echo -e " Use 'dave tell me <tag>' to look up snippets for a tag.\n Use 'dave remember <tag> <snippet> <description> to add a snippet.\n Use 'dave show' to open all snippets as a csv file."
+	echo -e "'dave tell me <tag>' - look up snippets for a tag.\n 'dave remember <tag> <snippet> <description> - add a snippet.\n 'dave show' - open all snippets as a csv file.\n 'dave version' - get the current version of this tool.\n 'dave help' - see this help info."
 elif [ $command = "version" ] || [ $command = "--version" ] || [ $command = "-v" ]
 then
 	echo "Smart-snippets version: $VERSION"
