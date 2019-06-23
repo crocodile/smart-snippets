@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.1.2"
+VERSION="1.1.4"
 
 LIGHT_GREEN='\033[1;32m'
 GREEN='\033[0;32m'
@@ -8,9 +8,12 @@ BLUE='\033[0;34m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
+# Create file if doesn't exist
+touch dave.csv
+
 if [ -z "$1" ]
 then
-	echo "No arguments. Refer to 'dave --help' for options."
+	echo "No arguments. Refer to 'dave help' for options."
 	exit 1
 else
 	command="$1"
@@ -21,7 +24,7 @@ then
 
 	if [ -z "$2" ]
 	then
-		echo "Please specify which tag you would like to retrieve snippets for as the second argument. Refer to 'dave --help' for options."
+		echo "Please specify which tag you would like to retrieve snippets for as the second argument. Refer to 'dave help' for options."
 		exit 1
 	else
 		tag="$2"
@@ -44,7 +47,7 @@ then
 	    fi
 	done < dave.csv
 
-	# To get a new line
+	# Jump to a new line
 	echo -e "" 
 	
 elif [ $command = "remember" ] || [ $command = "r" ]
@@ -88,9 +91,15 @@ then
 elif [ $command = "show" ] || [ $command = "s" ]
 then
 	open dave.csv
-elif [ $command = "help" ] || [ $command = "--help" ] ||[ $command = "-h" ] 
+elif [ $command = "help" ] || [ $command = "h" ] || [ $command = "--help" ] || [ $command = "-h" ] 
 	then
-	echo -e "'dave tell me <tag>' - look up snippets for a tag.\n 'dave remember <tag> <snippet> <description> - add a snippet.\n 'dave show' - open all snippets as a csv file.\n 'dave version' - get the current version of this tool.\n 'dave help' - see this help info."
+	echo -e "┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐\
+	       \n│ Tell me what the snippets are for a tag:  ${BLUE}'dave tellme [tag]'${NC} or ${BLUE}'dave t [tag]'${NC}                                                   |\
+	       \n│ Remember (i.e. save) a snippet for later: ${BLUE}'dave remember [tag] [snippet] [description]'${NC} or ${BLUE}'dave r [tag] [snippet] [description]'${NC} |\
+	       \n│ Show all snippets as a csv file:          ${BLUE}'dave show'${NC} or ${BLUE}'dave s'${NC}                                                                 │\
+	       \n│ Get the current version of this tool:     ${BLUE}'dave version'${NC} or ${BLUE}'dave v'${NC}                                                              │\
+	       \n│ Bring up this help info:                  ${BLUE}'dave help'${NC} or ${BLUE}'dave h'${NC}                                                                 │\
+	       \n└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘"
 elif [ $command = "version" ] || [ $command = "--version" ] || [ $command = "-v" ]
 then
 	echo "Smart-snippets version: $VERSION"
