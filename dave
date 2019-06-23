@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.1.4"
+VERSION="1.1.5"
 
 LIGHT_GREEN='\033[1;32m'
 GREEN='\033[0;32m'
@@ -91,7 +91,7 @@ then
 elif [ $command = "show" ] || [ $command = "s" ]
 then
 	open dave.csv
-elif [ $command = "help" ] || [ $command = "h" ] || [ $command = "--help" ] || [ $command = "-h" ] 
+elif [ $command = "help" ] || [ $command = "h" ] || [ $command = "--help" ] || [ $command = "-h" ]
 	then
 	echo -e "┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐\
 	       \n│ Tell me what the snippets are for a tag:  ${BLUE}'dave tellme [tag]'${NC} or ${BLUE}'dave t [tag]'${NC}                                                   |\
@@ -100,7 +100,7 @@ elif [ $command = "help" ] || [ $command = "h" ] || [ $command = "--help" ] || [
 	       \n│ Get the current version of this tool:     ${BLUE}'dave version'${NC} or ${BLUE}'dave v'${NC}                                                              │\
 	       \n│ Bring up this help info:                  ${BLUE}'dave help'${NC} or ${BLUE}'dave h'${NC}                                                                 │\
 	       \n└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘"
-elif [ $command = "version" ] || [ $command = "--version" ] || [ $command = "-v" ]
+elif [ $command = "version" ] || [ $command = "v" ] || [ $command = "--version" ] || [ $command = "-v" ]
 then
 	echo "Smart-snippets version: $VERSION"
 else
