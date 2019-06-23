@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.1.1"
+VERSION="1.1.2"
 
 LIGHT_GREEN='\033[1;32m'
 GREEN='\033[0;32m'
