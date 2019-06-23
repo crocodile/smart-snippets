@@ -13,7 +13,7 @@ else
 	command="$1"
 fi
 
-if [ $command = "tellme" ]
+if [ $command = "tellme" ] || [ $command = "t" ]
 then
 
 	if [ -z "$2" ]
@@ -24,26 +24,65 @@ then
 		tag="$2"
 	fi
 	
-	echo -e "\nSnippets for ${BLUE}$command${NC}:"
+	echo -e "\nSnippets for ${BLUE}$tag${NC}:"
 	while IFS=, read -r col1 col2 col3
 	do
-		if [ $col1 = $tag ]
+
+		if [ -z "$col1" ]
+		then
+			# Tag is empty. It may be due to a malformatted csv file. Skipping this cycle of the loop.
+			continue
+		fi
+
+		if [ "$col1" = "$tag" ]
 		then 
+			# Found a match.
 	    	echo -e "   ${BLUE}$col2${NC}\t$col3"
 	    fi
 	done < dave.csv
-	echo -e "" # To get a new line
+
+	# To get a new line
+	echo -e "" 
 	
-elif [ $command = "remember" ]
+elif [ $command = "remember" ] || [ $command = "r" ]
 then
 
-	tag="$2"
-	newsnippet="$3"
-	description="$4"
+	if [ -z "$2" ]
+	then
+	  	# No tag provided. Launch a prompt to ask for it.
+	    read -p "Tag: " tag 
+	else
+	  	tag="$2"
+	fi
+
+	if [ -z "$3" ]	
+	then
+	    # No snippet provided. Launch a prompt to ask for it.
+		read -p "Snippet: " newsnippet 
+	else
+		newsnippet="$3"
+	fi
+		
+	if [ -z "$4" ]
+	then
+	    # No description provided. Launch a prompt to ask for it.
+	    read -p "Description: " description 
+    else
+	  	description="$4"
+	fi
+
+    # Append to file. 
 	echo $tag,$newsnippet,$description >> dave.csv
+
+	# Check for commas in the texts and replace them with space, so they won't corrupt the csv file.
+	tag=${tag//,/ }
+	newsnippet=${newsnippet//,/ }
+	description=${description//,/ }
+	
+	# Print out the saved content
 	echo -e "${GREEN}For tag:${NC} $tag ${GREEN}added snippet:${NC} $newsnippet ${GREEN}with the description:${NC} $description"
 
-elif [ $command = "show" ]
+elif [ $command = "show" ] || [ $command = "s" ]
 then
 	open dave.csv
 elif [ $command = "help" ] || [ $command = "-help" ] || [ $command = "--help" ] ||[ $command = "-h" ] ||[ $command = "--h" ] 
