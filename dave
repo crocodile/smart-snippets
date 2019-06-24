@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.1.7"
+VERSION="1.1.8"
 
 LIGHT_GREEN='\033[1;32m'
 GREEN='\033[0;32m'
@@ -46,7 +46,7 @@ then
 			# Found a match.
 	    	echo -e "   ${BLUE}$col2${NC}\t$col3"
 	    fi
-	done < dave.csv
+	done < $filepath
 
 	# Jump to a new line
 	echo -e "" 
