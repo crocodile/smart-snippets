@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.1.6"
+VERSION="1.1.7"
 
 LIGHT_GREEN='\033[1;32m'
 GREEN='\033[0;32m'
@@ -10,7 +10,6 @@ NC='\033[0m' # No Color
 # Load config file to get filepath
 source dave.conf
 # Create file if doesn't exist
-echo -e "Filepath is: $filepath"
 touch filepath
 
 if [ -z "$1" ]

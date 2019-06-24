@@ -1,5 +1,5 @@
 #!/bin/bash
-tar -zcvf archive/smart-snippets.tar.gz dave dave.csv
+tar -zcvf archive/smart-snippets.tar.gz dave dave.conf dave.csv
 
 # Generating hash for brew tap distribution
 echo -e "The SHA256 hash is:"
