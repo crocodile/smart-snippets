@@ -1,9 +1,0 @@
-TAG,SNIPPET,DESCRIPTION
-dave,dave remember ls "ls -l" "List directory contents in long list format",Add snippet for ls
-dave,dave tellme ls,Retrieve snippets for ls
-dave,dave show,open csv file with all of the snippets
-git,git branch,List create or delete branches
-git,git checkout,Switch branches or restore working tree files
-ls,ls -l,Lists directory contents in a long format.
-
-

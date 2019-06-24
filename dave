@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.1.9"
+VERSION="1.1.10"
 
 LIGHT_GREEN='\033[1;32m'
 GREEN='\033[0;32m'
@@ -18,7 +18,7 @@ else
 fi
 
 # Create file if doesn't exist
-touch filepath
+touch $filepath
 
 if [ -z "$1" ]
 then
