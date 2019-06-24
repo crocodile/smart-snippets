@@ -78,7 +78,6 @@ A tool for saving short notes, cheatsheets for terminal commands (or anything or
 ```shell
    dave v
 ```
-```
 
 ----
 
