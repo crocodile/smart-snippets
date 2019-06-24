@@ -35,11 +35,11 @@ A tool for saving short notes, cheatsheets for terminal commands (or anything or
 ```shell
    dave remember [tag] [snippet] [description]
 ```
-        or make it shorter:
+   or make it shorter:
 ```shell
    dave r [tag] [snippet] [description]
 ```
-        or interactively via input prompts:
+   or interactively via input prompts:
 ```shell
    dave r # follow the input prompts
 ```
@@ -47,7 +47,7 @@ A tool for saving short notes, cheatsheets for terminal commands (or anything or
 ```shell
    dave tellme [tag]
 ```
-        or make it shorter:
+   or make it shorter:
 ```shell
    dave t [tag]
 ```
@@ -57,7 +57,7 @@ A tool for saving short notes, cheatsheets for terminal commands (or anything or
 ```shell
    dave show
 ```
-        or
+   or
 ```shell
    dave s
 ```
@@ -66,7 +66,7 @@ A tool for saving short notes, cheatsheets for terminal commands (or anything or
 ```shell
    dave help
 ```   
-        or
+   or
 ```shell
    dave h
 ```      
@@ -74,7 +74,7 @@ A tool for saving short notes, cheatsheets for terminal commands (or anything or
 ```shell
    dave version
 ```
-        or
+   or
 ```shell
    dave v
 ```
