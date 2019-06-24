@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.1.10"
+VERSION="1.1.11"
 
 LIGHT_GREEN='\033[1;32m'
 GREEN='\033[0;32m'
@@ -10,11 +10,11 @@ NC='\033[0m' # No Color
 # Load config file to get filepath
 if [ -f  "dave.conf" ]
 then
-	source dave.conf
+	source "`dirname $0`"/dave.conf
 else
-    filepath="dave.csv"
-    echo "#!/bin/bash" > dave.conf
-    echo "filepath='$filepath'" >> dave.conf
+    filepath="`dirname $0`/dave.csv"
+    echo "#!/bin/bash" > "`dirname $0`"/dave.conf
+    echo "filepath='$filepath'" >> "`dirname $0`"/dave.conf
 fi
 
 # Create file if doesn't exist
