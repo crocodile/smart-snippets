@@ -78,3 +78,17 @@ A tool for saving short notes, cheatsheets for terminal commands (or anything or
 ```shell
    dave v
 ```
+```
+
+----
+
+# Configurations: #
+Snippets by default saved as a dave.csv file to the $HOME/.smart-snippets hiden folder. 
+
+- Make sure you have the $HOME environmnet variable set
+- To change the location of the `$HOME/.smart-snippets/dave.csv` file, move it to the desired location then update the filepath variable in the `$HOME/.smart-snippets/dave.conf` file. For example
+
+```shell
+   #!/bin/bash
+   filepath=$HOME"/Documents/smart-snippets/dave.csv"   # Changed from filepath=$HOME"/.smart-snippets/dave.csv"
+```
