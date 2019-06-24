@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.1.13"
+VERSION="1.1.14"
 
 LIGHT_GREEN='\033[1;32m'
 GREEN='\033[0;32m'
@@ -13,8 +13,9 @@ then
 	source "$HOME/.smart-snippets"/dave.conf
 else
     filepath="$HOME/.smart-snippets/dave.csv"
+    mkdir $HOME/.smart-snippets
     echo "#!/bin/bash" > "$HOME/.smart-snippets"/dave.conf
-    echo "filepath='$filepath'" >> "HOME/.smart-snippets"/dave.conf
+    echo "filepath='$filepath'" >> "$HOME/.smart-snippets"/dave.conf
 fi
 
 # Create file if doesn't exist
