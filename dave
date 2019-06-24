@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.1.11"
+VERSION="1.1.13"
 
 LIGHT_GREEN='\033[1;32m'
 GREEN='\033[0;32m'
@@ -8,13 +8,13 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # Load config file to get filepath
-if [ -f  "dave.conf" ]
+if [ -f  "$HOME/.smart-snippets/dave.conf" ]
 then
-	source "`dirname $0`"/dave.conf
+	source "$HOME/.smart-snippets"/dave.conf
 else
-    filepath="`dirname $0`/dave.csv"
-    echo "#!/bin/bash" > "`dirname $0`"/dave.conf
-    echo "filepath='$filepath'" >> "`dirname $0`"/dave.conf
+    filepath="$HOME/.smart-snippets/dave.csv"
+    echo "#!/bin/bash" > "$HOME/.smart-snippets"/dave.conf
+    echo "filepath='$filepath'" >> "HOME/.smart-snippets"/dave.conf
 fi
 
 # Create file if doesn't exist
@@ -99,7 +99,7 @@ then
 
 elif [ $command = "show" ] || [ $command = "s" ]
 then
-	open dave.csv
+	open $filepath
 elif [ $command = "help" ] || [ $command = "h" ] || [ $command = "--help" ] || [ $command = "-h" ]
 	then
 	echo -e "┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐\
