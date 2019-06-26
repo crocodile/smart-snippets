@@ -52,8 +52,8 @@ A tool for saving short notes, cheatsheets for terminal commands (or anything or
    dave t [tag]
 ```
 
-## Show me all snippets as a csv file ##
-(This will attempt to open a csv file with the application associated with it on your computer.)
+## Show me all snippets in a csv file ##
+(This will attempt to open the csv file containing the snippets with the application associated with it on your computer.)
 ```shell
    dave show
 ```
